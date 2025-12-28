@@ -8,6 +8,6 @@ fetch("http://localhost:8000/users")
 //async await
 const fetchData = async () => {
   const res = await fetch("http://localhost:8000/users");
-  const data = res.json();
+  const data = await res.json();
   console.log(data);
 };
