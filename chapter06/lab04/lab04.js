@@ -1,5 +1,5 @@
 console.log("video lab04");
-
+const x = 5;
 const usernameElement = document.getElementById("username");
 const passwordElement = document.getElementById("password");
 
@@ -18,3 +18,18 @@ btnLoginElement.addEventListener("click", () => {
     passwordElement.style.borderColor = "red";
   }
 });
+
+const buyPhone = new Promise((resolve, reject) => {
+  let haveMoney = true;
+
+  if (haveMoney) {
+    resolve("Mua iPhone thành công 📱");
+  } else {
+    reject("Không đủ tiền 😢");
+  }
+});
+
+console.log(buyPhone);
+console.log(typeof buyPhone);
+console.log(typeof passwordElement);
+console.log(typeof x);
