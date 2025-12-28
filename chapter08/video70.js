@@ -9,6 +9,7 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+
 if (saveBtn) {
   saveBtn.addEventListener("click", () => {
     const myTodo = {
@@ -34,3 +35,27 @@ if (saveBtn) {
     window.location.href = "video70.html";
   });
 }
+
+const generateTodoTable = () => {
+  const todoListStr = localStorage.getItem("todo");
+  if (todoListStr) {
+    const todoList = JSON.parse(todoListStr);
+    console.log(todoList);
+
+    //insert data to html
+    const tbody = document.querySelector("#todoList tbody");
+    if (todoList && todoList.length) {
+      todoList.forEach((todo, index) => {
+        tbody.innerHTML += `
+        <tr>
+                <td>${todo.id}</td>
+                <td>${todo.name}</td>
+                <td><button>Xoa</button></td>
+            </tr>
+        `;
+      });
+    }
+  }
+};
+
+generateTodoTable();
