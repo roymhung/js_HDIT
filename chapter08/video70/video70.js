@@ -82,5 +82,11 @@ const handleDeleteTodo = (id) => {
     localStorage.setItem("todo", JSON.stringify(newTodo));
 
     window.location.reload();
+
+    // Hàm window.location.reload();
+    // Nó làm 3 việc:
+    // 1. load lại trang từ đầu
+    // 2. chạy lại file JS
+    // 3. gọi lại generateTodoTable()
   }
 };
