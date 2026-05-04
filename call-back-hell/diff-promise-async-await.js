@@ -78,11 +78,12 @@ fetch("http://localhost:8000/users/1")
 
   .then((res) => res.json())
   // OUTPUT: user (object)
-  // ví dụ: { id: 1, name: "An" }
+  // ví dụ: user (object) : { id: 1, name: "An" }
 
+  // Khi đã lấy được user(user chính là kết quả từ API /users/1) Thì truyền user vào function này để tiếp tục call API lấy posts của user đó
   .then((user) => {
     return (
-      fetch(`http://localhost:8000/posts?userId=${user.id}`)
+      fetch(`http://localhost:8000/posts?userId=${user.id}`) // ví dụ: user (object) : { id: 1, name: "An" }
         // OUTPUT: Promise<Response> (chưa phải posts)
 
         .then((res) => res.json())
